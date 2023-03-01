@@ -1,0 +1,24 @@
+<%- include('header') -%>
+
+     <div class="box" id="heading">
+         
+          <h1><%= listTitle%></h1>
+     </div>
+
+     <div class="box">
+          <!-- Either we can declare them here or we can add them in items array -->
+          <!-- <li>Buy Food</li>
+          <li>Cook Food</li>
+          <li>Eat Food</li> -->
+          <%for(var i=0;i<nextListItems.length ; i++){%>
+               <div class="item">
+                    <input type="checkbox">
+                    <p><%=nextListItems[i]%></p>
+               </div> 
+          <%}%>
+          <form class ="item" action="/" method="post">
+               <input type="text" placeholder="Next item" name="newitem" autocomplete="off">
+               <button type="submit" name="list" value="<%=listTitle%>">+</button>
+          </form>
+     </div>
+<%- include('footer') -%>
